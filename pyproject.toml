@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dcron"
+authors = [
+    {name = "Beralt Meppelink", email = "beralt@beralt.nl"},
+]
+description = "Dockerized cron using container labels"
+readme = "README.rst"
+requires-python = ">=3.10"
+license = {text = "Proprietary"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "docker>=6.1.3",
+    "croniter>=2.0.1",
+]
+dynamic = ["version"]
+
+[tool.setuptools]
+packages = ["dcron"]
+
+[project.scripts]
+dcrond = "dcron:dcrond.cli"
